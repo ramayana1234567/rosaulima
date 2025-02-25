@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Aplikai Kalkulator Sederhana</title>
+        <style>
+            body{
+                background-color:aqua;
+                font-family: monospace;
+            }
+            table{
+                width:320px;
+                margin:40px auto;
+                background-color: white;
+                border-color: white;
+            }
+            td{
+                width: 25%;
+                border-color:white;
+            }
+            button{
+                height:70px;
+                font-size:30px;
+                border:none;
+                text-align:center;
+                width:100%
+            }
+            #inputlabel{
+                height:100px;
+                font-size:60px;
+                background-color:#dedbdb;
+                vertical-align:button;
+                text-align:right;
+            }
+            </style>
+            </head>
+        <body>
+        <table>
+                <tr>
+                    <td collspacing="4"id="inputlabel">0</td>
+                    </tr>
+                    <tr>
+                            <td colspan="2"><button onclick="tombol(this)">AC</button></td>
+                            <td><button onclick="tombol(this)">Del</button></td>
+                            <td><button onclick="tombol(this)">/</button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="tombol(this)">7</button></td> 
+                            <td><button onclick="tombol(this)">8</button></td>
+                            <td><button onclick="tombol(this)">9</button></td> 
+                            <td><button onclick="tombol(this)">*</button></td>
+                        </tr>
+                        <tr>
+                             <td><button onclick="tombol(this)">4</button></td> 
+                             <td><button onclick="tombol(this)">5</button></td> 
+                             <td><button onclick="tombol(this)">6</button></td> 
+                             <td><button onclick="tombol(this)">-</button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="tombol(this)">1</button></td>
+                            <td><button onclick="tombol(this)">2</button></td> 
+                            <td><button onclick="tombol(this)">3</button></td> 
+                            <td><button onclick="tombol(this)">+</button></td> 
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button onclick="tombol(this)">0</button></td>
+                            <td><button onclick="tombol(this)">.</button></td>
+                            <td><button onclick="tombol(this)">=</button></td>
+                         </tr>
+                </table>
+                 <script>
+                        var inputlabel = document.getElementById('inputlabel');
+
+                            function tombol(obj){
+                            var kondisi=obj.innerHTML;
+                            if (kondisi==="="){
+                                try {
+                            inputlabel.innerHTML=eval(inputlabel.innerHTML);
+                                }catch{
+                                    inputlabel.innerHTML="error";
+                                }
+                                        }else if(kondisi=="AC"){
+                                            inputlabel.innerHTML="0";
+                                        }else if(kondisi=="Del"){
+                                            inputlabel.innerHTML=inputlabel.innerHTML.slice(0,-1)||'0';
+                                        }else{
+                                           if(inputlabel.innerHTML=="0"){
+                                            inputlabel.innerHTML=kondisi
+                                        }else{
+                                            inputlabel.innerHTML=+kondisi
+                                        }
+                                    }
+                                }   
+                  </script>
+         </body>
+</html>
+
+
+
+
+
+
+
+                            
+                             
+
+
+                         
+
+                        
+                   
+                
+           
